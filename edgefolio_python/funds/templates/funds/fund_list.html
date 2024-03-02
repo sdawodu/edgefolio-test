@@ -17,7 +17,7 @@
             <tbody>
                 {% for fund in funds %}
                 <tr>
-                    <td><a href="{% url "funds:fund-detail" fund.id %}">{{ fund.name }}</a></td>
+                    <td>{{ fund.name }}</td>
                     <td> {{ fund.strategy }}</td>
                     <td>{{ fund.aum }}</td>
                     <td> {{ fund.inception_date }}</td>
