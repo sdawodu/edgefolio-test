@@ -17,13 +17,12 @@ class ImportStatus(models.TextChoices):
     PARTIAL_SUCCESS = "partial_success", "Partial Success"
     FAILED = "failed", "Failed"
 
+
 class FundImport(models.Model):
     uploaded_at = models.DateTimeField(auto_now_add=True)
     file = models.FileField()
     status = models.CharField(
-        max_length=100,
-        default=ImportStatus.PENDING,
-        choices=ImportStatus
+        max_length=100, default=ImportStatus.PENDING, choices=ImportStatus
     )
     error_summary = models.TextField(blank=True)
 

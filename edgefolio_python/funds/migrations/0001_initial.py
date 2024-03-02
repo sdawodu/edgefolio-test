@@ -7,28 +7,55 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Fund',
+            name="Fund",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=100)),
-                ('aum', models.DecimalField(decimal_places=2, max_digits=20)),
-                ('strategy', models.CharField(max_length=100)),
-                ('inception_date', models.DateField(blank=True)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=100)),
+                ("aum", models.DecimalField(decimal_places=2, max_digits=20)),
+                ("strategy", models.CharField(max_length=100)),
+                ("inception_date", models.DateField(blank=True)),
             ],
         ),
         migrations.CreateModel(
-            name='FundImport',
+            name="FundImport",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('uploaded_at', models.DateTimeField(auto_now_add=True)),
-                ('file', models.FileField(upload_to='')),
-                ('status', models.CharField(choices=[('pending', 'Pending'), ('success', 'Success'), ('partial_success', 'Partial Success'), ('failed', 'Failed')], default='pending', max_length=100)),
-                ('error_summary', models.TextField(blank=True)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("uploaded_at", models.DateTimeField(auto_now_add=True)),
+                ("file", models.FileField(upload_to="")),
+                (
+                    "status",
+                    models.CharField(
+                        choices=[
+                            ("pending", "Pending"),
+                            ("success", "Success"),
+                            ("partial_success", "Partial Success"),
+                            ("failed", "Failed"),
+                        ],
+                        default="pending",
+                        max_length=100,
+                    ),
+                ),
+                ("error_summary", models.TextField(blank=True)),
             ],
         ),
     ]

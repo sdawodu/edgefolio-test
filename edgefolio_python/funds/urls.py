@@ -4,8 +4,8 @@ from django.urls import include, path
 
 app_name = "funds"
 router = routers.DefaultRouter()
-router.register(r'funds', FundViewSet, basename='fund')
+router.register(r"funds", FundViewSet, basename="fund")
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path("", include(router.urls)),
 ]
