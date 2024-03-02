@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Fund List</title>
+    </head>
+    <body>
+        <h1>Fund List</h1>
+        <table>
+            <caption>Fund List</caption>
+            <thead>
+                <tr>
+                    <th>Name 1</th>
+                    <th>Strategy 2</th>
+                    <th>AUM (USD)</th>
+                    <th>Inception Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for fund in funds %}
+                <tr>
+                    <td><a href="{% url "funds:fund-detail" fund.id %}">{{ fund.name }}</a></td>
+                    <td> {{ fund.strategy }}</td>
+                    <td>{{ fund.aum }}</td>
+                    <td> {{ fund.inception_date }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    <div> AUM SUM: {{ sum }}</div>
+    <div>Fund Count: {{ funds|length }}</div>
+        
+    </body>
+</html>
